@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   
   // タイトル設定（ページ毎にタイトルを設定できるようにテンプレート化）
   title: {
-    template: '%s | 神奈川の医療白衣クリーニング専門合同会社渡邊商会',
+    template: '%s |合同会社渡邊商会',
     default: '神奈川県・横浜の医療白衣スクラブクリーニング専門 | 合同会社渡邊商会',
   },
   description: "神奈川県の医療現場に特化したプロの白衣クリーニングサービス。1着から集配、最短当日納品、品質保証。スクラブ、検診着、ケアウェアなど幅広く対応。お見積りは無料です。",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   
   // OGP設定（SNSシェア用）
   openGraph: {
-    title: '神奈川県医療白衣クリーニング専門 | 合同会社渡邊商会',
+    title: '神奈川県・横浜の医療スクラブ・白衣クリーニング専門｜合同会社渡邊商会',
     description: '1着から集配OK！神奈川の医療現場を支えるプロのクリーニング。',
     url: 'https://medical-cleaning-site-new.vercel.app',
     siteName: '合同会社渡邊商会 医療白衣クリーニング',
