@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Script from 'next/script'; // Google広告タグのために追加
 
 // SEO向上のための詳細なメタデータ（横浜・神奈川全域 最終版）
 export const metadata: Metadata = {
@@ -45,7 +46,6 @@ export const metadata: Metadata = {
 
   // Google Search Consoleの所有権確認コード
   verification: {
-    // ここにGoogleから発行されたコードを設定しました！
     google: 'X1TFgCEcLHQ60CjzXmBFkPrsppS4WhxQ5tOk0OjbYjo',
   },
 };
@@ -96,6 +96,25 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        
+        {/* ↓↓↓ ここからGoogle広告のタグを追加しました ↓↓↓ */}
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17461447061"
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'AW-17461447061');
+            `,
+          }}
+        />
+        {/* ↑↑↑ Google広告のタグはここまで ↑↑↑ */}
       </head>
       <body>{children}</body>
     </html>
